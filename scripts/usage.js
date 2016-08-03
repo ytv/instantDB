@@ -1,33 +1,27 @@
 var usage = {
-    view: `   view        node mockDB.js <collectionName> view\n`,
-    // find: `   find        node mockDB.js <collectionName> find [<query>]\n`,
-    insert: `   insert      node mockDB.js <collectionName> insert [n]\n`,
-    delete: `   delete      node mockDB.js <collectionName> delete\n`,
-    // delete: `   delete      node mockDB.js <collectionName> delete [<query>]\n`,
-    // replace: `   replace     node mockDB.js <collectionName> replace <query> <replacementData>\n`,
-    // update: `   update      node mockDB.js <collectionName> replace <query> <updatedData>\n`,
+    view: `   view        node instantDB.js <collectionName> view\n`,
+    insert: `   insert      node instantDB.js <collectionName> insert [n]\n`,
+    delete: `   delete      node instantDB.js <collectionName> delete\n`,
     usage: `\nUsage: `,
-    collectionNames: `Valid <collectionName> values: 'users', 'posts'`
+    collectionNames: `<collectionName> could be the name of an old collection you want to reuse or the name of a
+    new collection you wish to create`
 }
 
 usage.help =
 `
-Usage: node mockDB.js <command>
+
+Usage: node instantDB.js <collectionName> <command>
 
 where <command> is one of:
 
 ${usage.view}
 ${usage.insert}
 ${usage.delete}
-Note
-1. ${usage.collectionNames}
-2. <query>, <replacement>, <updatedData> should be in JSON format {<field>: <value>, ..}
-2. [n] is a non-negative number
 
-    `;
+Notes
+1. ${usage.collectionNames}
+2. [n] is a positive integer
+
+`;
 
 module.exports = usage
-
-// ${usage.find}
-// ${usage.replace}
-// ${usage.update}
